@@ -6,6 +6,7 @@ public class Main {
         System.out.println(factorial(10));
         printEvenNums();
         System.out.println(sumDigit(-10));
+        System.out.println(findMaxOfThree(7, 4, 9));
     }
     public  static int factorial(int n){
         if (n<0) return -1;
@@ -26,5 +27,13 @@ public class Main {
         if (n < 10 & n >= 0) return n;
         else if (n<0) return sumDigit(-1 * n);
         else return sumDigit(n/10) + n%10;
+    }
+    public static int findMaxOfTwo(int a, int b){
+        if (a>b) return a;
+        else return b;
+    }
+    public static int findMaxOfThree(int a, int b, int c){
+        int maxFirst = findMaxOfTwo(a, b);
+        return findMaxOfTwo(maxFirst, c);
     }
 }
